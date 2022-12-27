@@ -11,8 +11,8 @@ services:
       - DEBUG=${DEBUG}
       - GH_PAT=${GH_PAT}
       - GH_USERNAME=${GH_USERNAME}
-    depends_on:
-      - display
+    # depends_on:
+    #   - display
     entrypoint: []
     working_dir: /app
     command: >
