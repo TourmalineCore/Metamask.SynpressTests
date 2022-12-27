@@ -10,8 +10,6 @@ module.exports = defineConfig({
     screenshotsFolder: 'tests/e2e/screenshots',
     video: false,
     screenshotOnRunFailure: false,
-    chromeWebSecurity: true,
-    userAgent: 'synpress',
     setupNodeEvents(on, config) {
       synpressPlugins(on, config);
       return config
