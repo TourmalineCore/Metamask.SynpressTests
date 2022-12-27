@@ -37,6 +37,5 @@ jobs:
           DOCKER_DEFAULT_PLATFORM: linux/amd64
           PRIVATE_KEY: ${{ env.PRIVATE_KEY }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NGROK_AUTH: ${{ secrets.NGROK_AUTH }}
           GH_PAT: ${{ secrets.GH_PAT }}
           GH_USERNAME: ${{ secrets.GH_USERNAME }}
