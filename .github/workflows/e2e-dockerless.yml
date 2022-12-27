@@ -1,0 +1,20 @@
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  e2e:
+    name: E2E test without docker
+    runs-on: ubuntu-18.04
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v2
+   
+      - name: Install dependencies
+        run: |
+          yarn
+
+      - name: Run e2e-test
+        run: |
+           yarn test
