@@ -8,21 +8,26 @@ jobs:
     name: E2E with docker
     runs-on: ubuntu-18.04
     steps:
+      # Нужно для
       - name: Chown workspace
         run: chown -R $(whoami) .
 
+      # Нужно для
       - name: Checkout
         uses: actions/checkout@93ea575cb5d8a053eaa0ac8fa3b40d7e05a33cc8
 
+      # Нужно для
       - name: Set up QEMU
         uses: docker/setup-qemu-action@8b122486cedac8393e77aa9734c3528886e4a1a8
 
+      # Нужно для
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@dc7b9719a96d48369863986a06765841d7ea23f6
 
+      # Запуск тестов
       - name: Run e2e-test
         run: |
-          docker-compose --env-file ./.env up --build --exit-code-from synpress
+          docker-compose --env-file ./docker.config up --build --exit-code-from synpress
         env:
           COMPOSE_DOCKER_CLI_BUILD: 1
           DOCKER_BUILDKIT: 1
